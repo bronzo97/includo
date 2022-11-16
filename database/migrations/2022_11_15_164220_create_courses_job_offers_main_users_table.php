@@ -15,9 +15,9 @@ class CreateCoursesJobOffersMainUsersTable extends Migration
     {
         Schema::create('courses_job_offers_main_users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("courses_id")->constrained();
-            $table->foreignId("job_offers_id")->constrained();
-            $table->foreignId("main_users_id")->constrained();
+            $table->foreignId("course_id")->constrained();
+            $table->foreignId("job_offer_id")->constrained();
+            $table->foreignId("main_user_id")->constrained();
 
             $table->timestamps();
         });

@@ -15,7 +15,7 @@ class CreateJobOffersTable extends Migration
     {
         Schema::create('job_offers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("id_azienda")->constrained();
+            $table->foreignId("company_id")->constrained();
             $table->string("nome");
             $table->string("ambito_lavorativo");
             $table->string("tipo_contratto");

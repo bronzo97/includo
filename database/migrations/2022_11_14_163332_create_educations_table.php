@@ -15,13 +15,12 @@ class CreateEducationsTable extends Migration
     {
         Schema::create('educations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("id_main_user")->constrained();
+            $table->foreignId("main_user_id")->constrained();
             $table->string("titolo_di_studio");
             $table->date("data_inizio");
             $table->date("data_fine");
             $table->string("nome_istituto");
             $table->string("competenze");
-            $table->string("titolo_di_studio");
             $table->string("immagine_certificazioni");
             
             $table->timestamps();
