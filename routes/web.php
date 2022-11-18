@@ -24,3 +24,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('lavoratore/home', 'HomeController@lavoratore')->name('lavoratore.home')->middleware('role');
+Route::get('azienda/home', 'HomeController@azienda')->name('azienda.home')->middleware('role');
+Route::get('istituto/home', 'HomeController@istituto')->name('istituto.home')->middleware('role');
