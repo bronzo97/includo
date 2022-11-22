@@ -57,7 +57,7 @@ class LoginController extends Controller
             } else if (auth()->user()->role == "Istituto"){
                 return redirect()->route('istituto.home');
             }
-        }else{
+        } else{
             return redirect()->route('login')
                 ->with('error','Email-Address And Password Are Wrong.');
         }

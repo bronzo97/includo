@@ -28,16 +28,34 @@ class HomeController extends Controller
 
     public function lavoratore()
     {
-        return view('lavoratore.home');
+        if(auth()->user()->role == "Lavoratore"){
+            return view('lavoratore.home');
+        } 
+        else {
+            return redirect('home')->with('error',"You don't have the permissions to access here.");
+        }
+        
     }
 
     public function azienda()
     {
-        return view('azienda.home');
+        if(auth()->user()->role == "Azienda"){
+            return view('azienda.home');
+        } 
+        else {
+            return redirect('home')->with('error',"You don't have the permissions to access here.");
+        }
+        
     }
 
     public function istituto()
     {
-        return view('istituto.home');
+        if(auth()->user()->role == "Istituto"){
+            return view('istituto.home');
+        } 
+        else {
+            return redirect('home')->with('error',"You don't have the permissions to access here.");
+        }
+        
     }
 }

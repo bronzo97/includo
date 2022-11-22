@@ -16,21 +16,11 @@ class Role
     public function handle($request, Closure $next)
     {
 
-        if(auth()->user()->role == "Lavoratore"){
+        if(auth()->user()->role == "Lavoratore" || auth()->user()->role == "Azienda" || auth()->user()->role == "Impresa"){
             return $next($request);
         } 
         else {
             return redirect('home')->with('error',"You don't have the pesmissions to access here.");
-        }
-        if(auth()->user()->role == "Azienda"){
-            return $next($request);
-        } else {
-        return redirect('home')->with('error',"You don't have the pesmissions to access here.");
-        }
-        if(auth()->user()->role == "Istituto"){
-            return $next($request);
-        } else {
-        return redirect('home')->with('error',"You don't have the pesmissions to access here.");
         }
         
     }
